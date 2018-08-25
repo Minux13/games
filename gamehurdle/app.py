@@ -23,9 +23,9 @@ def inicial():
 			personaje = 'pulpo.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
-			background1 = 'pointy_mountains.png'
-			background2 = 'piramides.png'
-			background3 = 'hills2.png'
+			background1 = 'b1.png'
+			background2 = 'b22.png'
+			background3 = 'b3.png'
 			pie = 'pieF.png'
 		elif espacio == 'selva':
 			color = '#aabbff'

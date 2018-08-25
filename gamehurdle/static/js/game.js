@@ -90,7 +90,7 @@ var background = {
         img: document.getElementById("background2"),
 	x1: 0,
 	x2: undefined,
-	y : 106,
+	y : 90,
 	speed : 2
     },
     background3 : {
@@ -98,7 +98,7 @@ var background = {
         x1: 0,
 	x2: undefined,
 	y : 100,
-	speed : 3
+	speed : 4
     },
     init: function(){
 	background.clouds.img.height = 250;
@@ -247,8 +247,8 @@ var game = {
 	ctx.drawImage( background.sun.img, background.sun.x, background.sun.y, background.sun.img.width -30, background.sun.img.height-30);
 
 	var c = background.background1;	//background1
-	ctx.drawImage( c.img, c.x1, c.y, c.img.width, c.img.height);
-	ctx.drawImage( c.img, c.x2, c.y, c.img.width, c.img.height);
+	ctx.drawImage( c.img, c.x1, c.y, c.img.width, c.img.height + 20);
+	ctx.drawImage( c.img, c.x2, c.y, c.img.width, c.img.height + 20);
 
 	var c = background.background2;	//background2
 	ctx.drawImage( c.img, c.x1, c.y, c.img.width, c.img.height);
