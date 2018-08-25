@@ -1,0 +1,56 @@
+<html>
+<head>
+<style>
+body{
+background-color: #f9f9f9;
+}
+canvas {
+    /*border:1px solid #d3d3d3;
+    background-image: url("static/images/guitarra.jpg");*/
+    background: {{color}};
+}
+#score{
+	padding-right: 0px;
+	padding-top: 10px;
+	position: absolute;
+	right: 10%;
+}
+.scores{
+	color: #ccc;
+}
+#gana{
+	font-size: 50px;
+	display: inline-block;
+	text-align: center;
+	margin-right: 40px;
+}
+#pierde{
+	font-size: 50px;
+	display: inline-block;
+	text-align: center;
+}
+#elaudio{
+	display: none;
+}
+</style>
+</head>
+<body id="cuerpo">
+
+	<img id="nota1" src="/static/images/{{personaje}}" style="display:none;">
+	<img id="obs" src="/static/images/obs.png" style="display:none;">
+	
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/game.js"></script>
+	
+	<div style="text-align:center;" id="contenedorcanvas">
+	</div>
+	
+	<script>
+		$(window).on("load", function() { // makes sure the whole site is loaded
+			game.createDOMCanvas();
+			game.initValues();
+		});	
+	</script>
+</body>
+</html>
+
