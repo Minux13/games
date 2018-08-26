@@ -158,6 +158,9 @@ var game = {
     pixelAvanceHandle : -10,//Desplazamiento del obstaculo, cuando los frames avanzan cien este se aumenta una unidad, es negativo por que va a la izquierda
     frames : 0,
     handles : [new handle],
+    score : {
+        element : document.getElementById('score')    
+    },
     initValues : function(){
 	character.refresh();
 	background.init();
@@ -179,17 +182,12 @@ var game = {
     },
     frame: function(){
 	game.frames = game.frames + 1;
+	game.score.element.innerHTML = Math.round(game.frames/10) ;
 		
 	//Avanza en x los obstaculos
 	for(h=0; h<game.handles.length; h++){
 		game.handles[h].x = game.handles[h].x + game.pixelAvanceHandle;
 	}
-	
-	//Pie
-	/*this.personaje.pie= this.personaje.pie-1;
-	if(this.personaje.pie <= -3){
-	    this.personaje.pie = 3;
-	}*/
 	
 	//Si se elimina un obstaculo
 	if(game.handles[0].x <= -100){
@@ -212,21 +210,15 @@ var game = {
 	if( izquierdaObstaculo <= character.right ){//Si el lado Izquierdo del obstaculo esta del lado izquierdo a partir del lado derecho del personaje
 	    if( izquierdaObstaculo <= character.middleX ) {//Si el lado Izquierdo del obstaculo esta del lado izquierdo a partir de la mitad del personaje
 	        if( derechaObstaculo >= character.left && character.down >= arribaObstaculo ){//Si el lado derecho del obstaculo esta del lado derecho del personaje a partir del lado izquierdo del personaje && la parte de abajo del personaje esta abajo del obstaculo a partir del techo del obstaculo
-		    document.getElementById("cuerpo").removeEventListener("keydown", precionaLetra);
-     	    	    document.getElementById("cuerpo").removeEventListener("touchstart", clicky);
-     	    	    game.stop();
+		    game.gameOver();
+     	    	    /*game.stop();
      	    	    setTimeout(function(){
 		        game.initValues();
-     	    	    }, 3000);
+     	    	    }, 3000);*/
 		}
 	    }else{
 		if( derechaObstaculo >= character.middleX && character.middleY >= arribaObstaculo ){
-		    document.getElementById("cuerpo").removeEventListener("keydown", precionaLetra);
-     	    	    document.getElementById("cuerpo").removeEventListener("touchstart", clicky);
-     	    	    game.stop();
-     	    	    setTimeout(function(){
-		        game.initValues();
-     	    	    }, 3000);
+		    game.gameOver();
 		}
 	    }
 	}
@@ -305,7 +297,17 @@ var game = {
     },
     stop : function() {
         clearInterval(this.interval);
-    },    
+    },
+    gameOver: function(){
+	document.getElementById("cuerpo").removeEventListener("keydown", precionaLetra);
+     	document.getElementById("cuerpo").removeEventListener("touchstart", clicky);
+	game.stop();
+     	//setTimeout(function(){
+	//    game.initValues();
+     	//}, 3000);
+
+        var gameOverElement = document.getElementById('gameover').style.display = 'block';
+    },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },

@@ -11,24 +11,29 @@ canvas {
     background: {{color}};
 }
 #score{
-	padding-right: 0px;
-	padding-top: 10px;
-	position: absolute;
-	right: 10%;
-}
-.scores{
-	color: #ccc;
-}
-#gana{
-	font-size: 50px;
-	display: inline-block;
 	text-align: center;
-	margin-right: 40px;
+	margin: 30px;
 }
-#pierde{
-	font-size: 50px;
-	display: inline-block;
-	text-align: center;
+#gameover{
+    position: absolute;
+    margin-top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(200,200,200,0.3);
+    padding: 15px 40px;
+    border-radius: 8px;
+    border: solid 1px #ccc;
+    text-align: center;
+    display: none;
+}
+button{
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin: 5px 15px;
+    border: none;
+    background: linear-gradient(0deg, #444,#77c);
+    color: #ddd;
+    cursor: pointer;
 }
 #elaudio{
 	display: none;
@@ -46,12 +51,18 @@ canvas {
 	<img id="background3" src="/static/images/{{background3}}" style="display:none;">
 	<img id="pie" src="/static/images/{{pie}}" style="display:none;">
 	
-	<script src="/static/js/jquery-3.2.1.min.js"></script>
-	<script src="/static/js/game.js"></script>
-	
+	<div id="gameover">
+		<p>¡Perdiste!</p>
+		<p>¿Quieres volver a jugar?</p>
+		<button> Cancelar</button>
+		<button onclick="game.initValues();document.getElementById('gameover').style.display='none'; ">Aceptar</button>
+	</div>
+
 	<div style="text-align:center;" id="contenedorcanvas">
 	</div>
-	
+	<div id="score"></div>
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/game.js"></script>
 	<script>
 		$(window).on("load", function() { // makes sure the whole site is loaded
 			game.createDOMCanvas();

@@ -24,7 +24,7 @@ def inicial():
 			clouds = 'clouds.png'
 			sun = 'sun.png'
 			background1 = 'b1.png'
-			background2 = 'b22.png'
+			background2 = 'b2.png'
 			background3 = 'b3.png'
 			pie = 'pieF.png'
 		elif espacio == 'selva':
@@ -32,18 +32,18 @@ def inicial():
 			personaje = 'mono.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
-			background1 = 'pointy_mountains.png'
-			background2 = 'piramides.png'
-			background3 = 'hills2.png'
+			background1 = 'e1.png'
+			background2 = 'e2.png'
+			background3 = 'e3.png'
 			pie = 'pieF.png'
 		else: 
 			color = '#ddeeff'
 			personaje = 'jabali.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
-			background1 = 'pointy_mountains.png'
-			background2 = 'piramides.png'
-			background3 = 'hills2.png'
+			background1 = 'd1.png'
+			background2 = 'd2.png'
+			background3 = 'd3.png'
 			pie = 'pieF.png'
 		
 		
