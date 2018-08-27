@@ -11,40 +11,40 @@ def inicial():
 		
 		if espacio == 'desierto':
 			color = '#d5edf7'
-			personaje = 'fox.png'
+			personaje = 'zorro.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
 			background1 = 'pointy_mountains.png'
 			background2 = 'piramides.png'
 			background3 = 'hills2.png'
-			pie = 'pieF.png'
-		elif espacio == 'mar':
+			pie = 'pieZ.png'
+		elif espacio == 'himalaya':
 			color = '#4433dd'
-			personaje = 'pulpo.png'
+			personaje = 'reno.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
 			background1 = 'b1.png'
 			background2 = 'b2.png'
 			background3 = 'b3.png'
-			pie = 'pieF.png'
-		elif espacio == 'selva':
+			pie = 'pieR.png'
+		elif espacio == 'bosque':
 			color = '#aabbff'
-			personaje = 'mono.png'
+			personaje = 'lobo.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
 			background1 = 'e1.png'
 			background2 = 'e2.png'
 			background3 = 'e3.png'
-			pie = 'pieF.png'
-		else: 
+			pie = 'pieL.png'
+		else: #granja
 			color = '#ddeeff'
-			personaje = 'jabali.png'
+			personaje = 'ardilla.png'
 			clouds = 'clouds.png'
 			sun = 'sun.png'
 			background1 = 'd1.png'
 			background2 = 'd2.png'
 			background3 = 'd3.png'
-			pie = 'pieF.png'
+			pie = 'pieA.png'
 		
 		
 		

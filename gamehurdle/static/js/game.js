@@ -10,6 +10,7 @@ var character = {
 	character.aceleracionY = -24;
 	character.pie.x        = character.x + 16;
 	character.pie.y        = character.y + character.height -13;
+	character.isJumping    = true;
 	character.sides();
     },
     img          : document.getElementById("nota1"),
@@ -178,11 +179,12 @@ var game = {
 	    this.removeEventListener('touchstart',arguments.callee,false);
             game.start();	
 	} );
+	game.score.element.innerHTML = "Score: 0"
 	game.draw();
     },
     frame: function(){
 	game.frames = game.frames + 1;
-	game.score.element.innerHTML = Math.round(game.frames/10) ;
+	game.score.element.innerHTML = "Score: " + Math.round(game.frames/10) ;
 		
 	//Avanza en x los obstaculos
 	for(h=0; h<game.handles.length; h++){

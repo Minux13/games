@@ -54,13 +54,13 @@ button{
 	<div id="gameover">
 		<p>¡Perdiste!</p>
 		<p>¿Quieres volver a jugar?</p>
-		<button> Cancelar</button>
+		<button onclick="document.getElementById('gameover').style.display='none'; "> Cancelar</button>
 		<button onclick="game.initValues();document.getElementById('gameover').style.display='none'; ">Aceptar</button>
 	</div>
 
 	<div style="text-align:center;" id="contenedorcanvas">
 	</div>
-	<div id="score"></div>
+	<div id="score">Score: 0</div>
 	<script src="/static/js/jquery-3.2.1.min.js"></script>
 	<script src="/static/js/game.js"></script>
 	<script>
